@@ -3,6 +3,7 @@ import cmd
 import sys
 """Create a program that contains the entry point of the
 command interpreter"""
+"""This is a module of the console"""
 
 
 class HBNBCommand(cmd.Cmd):
@@ -10,11 +11,21 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb)'
 
     def do_quit(self, arg):
-        """exit the program"""
+        """
+        This comand exit the program
+        
+        Parameters:
+            arg: the argument
+        """
         return True
 
     def do_EOF(self, arg):
-        """exit the program"""
+        """
+        This comand exit the program
+        
+        Parameters:
+            arg: the argument
+        """
         return True
 
     def emptyline(self):
