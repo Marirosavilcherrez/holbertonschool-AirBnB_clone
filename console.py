@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-import cmd
-import sys
 """Create a program that contains the entry point of the
 command interpreter"""
-"""This is a module of the console"""
+import cmd
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
     """Class of the console"""
+    """This is a module of the console"""
     prompt = '(hbnb)'
 
     def do_quit(self, arg):
