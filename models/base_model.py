@@ -37,7 +37,7 @@ class BaseModel:
     def to_dict(self):
         """Public instance return a dictionary containig all keys/value
         and return it with __class__"""
-        full_dict = self.__dict__
+        full_dict = dict(self.__dict__)
         full_dict["created_at"] = self.created_at.isoformat()
         full_dict["updated_at"] = self.updated_at.isoformat()
         full_dict["__class__"] = self.__class__.__name__
