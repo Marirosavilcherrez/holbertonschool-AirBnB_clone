@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
+import models.__init__
 """This is a class BaseModel that defines all common
 attributes/methods for other classes"""
 
@@ -8,8 +9,9 @@ attributes/methods for other classes"""
 class BaseModel:
     "BaseModel class"
 
-    def __init__(self, *args, **kwargs):
+    def c__init__(self, *args, **kwargs):
         "This is a constructor"
+        storage.new(self)
         if kwargs != {}:
             for key, value in kwargs.items():
                 if key != "__class__":
@@ -29,7 +31,8 @@ class BaseModel:
 
     def save(self):
         """Function to update the public instance attribute"""
-        self.update_at = datetime.datetime.now()
+        self.updated_at = datetime.now()
+        storage.save(self)
 
     def to_dict(self):
         """Public instance return a dictionary containig all keys/value
