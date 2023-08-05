@@ -3,14 +3,12 @@
 import unittest
 from datetime import datetime
 import os
+import json
+from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
-from models import *
 
 
 class TestFileStorage(unittest.TestCase):
-
-    def test_value(self):
-        self.assertTrue(True)
 
     def test_type(self):
         obj = FileStorage()
