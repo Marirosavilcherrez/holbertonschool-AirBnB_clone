@@ -22,7 +22,7 @@ class FileStorage:
         dic_store = {}
         for key, value in FileStorage.__objects.items():
             dic_store[key] = value.to_dict()
-            with open(FileStorage.__file_path, mode="w", encoding="UTF-8") as document:
+        with open(FileStorage.__file_path, mode="w", encoding="UTF-8") as document:
                 document.write(json.dumps(dic_store))
 
     def reload(self):
