@@ -12,28 +12,28 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
-        self.__objects["{}.{}".format(obj.__class__name__, obj.id)] = obj
+        self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
         """Serealizes"""
-        with open(self.__file_path, mode="w", encoding="UTF-8") as document:
-            dic_storage = {}
-            for key, value in self.__objects.items():
-                dic_storage[key] = value.to_dic()
-            document.write(json.dumps(dic_storage))
+        dic_store = {}
+        for key, value in FileStorage.__objects.items():
+            dic_store[key] = value.to_dict()
+            with open(FileStorage.__file_path, mode="w", encoding="UTF-8") as document:
+                document.write(json.dumps(dic_store))
 
     def reload(self):
         """Deserealizes"""
-        if os.path.exists(self.__file_path):
-            with open(self.__file_path, "r", encoding="UTF-8") as document:
-                read_doc = document.read()
-                dict_storage = json.loads(read_doc)
-                for key, value in dict_storage.items():
-                    value = dic_storage.items()
+        if os.path.exists(FileStorage.__file_path):
+            with open(FileStorage.__file_path, "r", encoding="UTF-8") as doc:
+                data_file = doc.read()
+                store_json = json.loads(data_file)
+                for key, value in store_json.items():
+                    value = store_json[key]
                     obj = eval(value['__class__'])(**value)
-                    self.__objects[key] = obj
+                    FileStorage.__objects[key] = obj
         else:
             pass
