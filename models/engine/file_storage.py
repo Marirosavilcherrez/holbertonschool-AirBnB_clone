@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import json
 import os
-from models.base_model import BaseModel
+
 """This is a class FileStorage that serializes instance
 to a JSON file and desealizes in JSON format"""
 
@@ -27,6 +27,7 @@ class FileStorage:
 
     def reload(self):
         """Deserealizes"""
+        from models.base_model import BaseModel
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="UTF-8") as doc:
                 data_file = doc.read()
