@@ -85,21 +85,22 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
     def do_all(self, line):
-        imp_id = line.split()
+        imp_id = line.split(" ")
         if not imp_id:
-            print("**class name missing**")
-            return
-        if imp_id[0] not in HBNBCommand.classes:
+            chain = []
+            full_obj = storage.all()
+            for key, values in full_obj.items():
+                chain.append(str(values))
+            print(chain)
+        elif imp_id[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
-            return
         else:
             chain = []
             full_obj = storage.all()
-
-            for obj in full_obj.values():
-
-                if not imp_id[0] or type(obj).__name__ == imp_id[0]:
-                    chain.append(str(obj))
+            for key, values in full_obj.items():
+                clave = key.split(".")
+                if clave[0] == imp_id[0]:
+                    chain.append(str(values))
             print(chain)
 
     def do_update(self, args):
