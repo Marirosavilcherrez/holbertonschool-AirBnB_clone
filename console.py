@@ -14,9 +14,9 @@ class HBNBCommand(cmd.Cmd):
     """Class of the console"""
     """This is a module of the console"""
     prompt = '(hbnb)'
-    classes = = {
-        "BaseModel",
-        "User"
+    classes = {
+        "BaseModel": BaseModel,
+        "User": User 
     }
 
     def do_quit(self, arg):
