@@ -35,9 +35,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, name):
         if len(name) == 0:
-            print('** class name missing **')
+            print("** class name missing **")
         elif name not in HBNBCommand.classes:
-            print('** class doesnt exist **')
+            print("** class doesn't exist **")
             return False
         else:
             novo = eval("{}()".format(name))
