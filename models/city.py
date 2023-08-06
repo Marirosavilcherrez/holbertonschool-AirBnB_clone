@@ -8,5 +8,5 @@ class attributes"""
 class City(BaseModel):
     """City class"""
 
-    id = str()  # it will be the state.id
+    state_id = str()  # it will be the state.id
     name = str()
