@@ -3,6 +3,7 @@
 command interpreter"""
 import cmd
 import sys
+import json
 from models.base_model import BaseModel
 from models import storage
 
@@ -35,9 +36,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, name):
         if len(name) == 0:
-            print('** class name missing **')
+            print("** class name missing **")
         elif name not in HBNBCommand.classes:
-            print('** class doesnt exist **')
+            print("** class doesn't exist **")
             return False
         else:
             novo = eval("{}()".format(name))
@@ -93,9 +94,9 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             chain = []
-            imp_obj = storage.all()
+            full_obj = storage.all()
 
-            for obj in imp_obj.values():
+            for obj in full_obj.values():
 
                 if not imp_id[0] or type(obj).__name__ == imp_id[0]:
                     chain.append(str(obj))
