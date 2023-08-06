@@ -8,4 +8,4 @@ class attributes"""
 class Amenity(BaseModel):
     """Amenity class"""
 
-    self.name = str()
+    name = str()
