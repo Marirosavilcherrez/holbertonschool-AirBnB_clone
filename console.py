@@ -4,6 +4,7 @@ command interpreter"""
 import cmd
 import sys
 import json
+from shlex import split
 from models.base_model import BaseModel
 from models import storage
 
@@ -84,24 +85,18 @@ class HBNBCommand(cmd.Cmd):
                 del full_obj[k]
                 storage.save()
 
-    def do_all(self, line):
-        imp_id = line.split(" ")
-        if not imp_id:
-            chain = []
-            full_obj = storage.all()
-            for key, values in full_obj.items():
-                chain.append(str(values))
-            print(chain)
-        elif imp_id[0] not in HBNBCommand.classes:
+    def do_all(self, arg):
+        imp_id = arg.split()
+        if len(imp_id) > 0 and imp_id[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
         else:
-            chain = []
-            full_obj = storage.all()
-            for key, values in full_obj.items():
-                clave = key.split(".")
-                if clave[0] == imp_id[0]:
-                    chain.append(str(values))
-            print(chain)
+            objl = []
+            for obj in storage.all().values():
+                if len(imp_id) > 0 and imp_id[0] == obj.__class__.__name__:
+                    objl.append(obj.__str__())
+                elif len(imp_id) == 0:
+                    objl.append(obj.__str__())
+            print(objl)
 
     def do_update(self, args):
         upd_cls = args.split()
