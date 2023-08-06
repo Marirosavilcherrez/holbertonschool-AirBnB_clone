@@ -16,13 +16,13 @@ class TestFileStorage(unittest.TestCase):
 
     def test_path(self):
         obj = FileStorage()
-        obj.__file_path = "file"
-        self.assertEqual(obj.__file_path, "file")
+        setattr(obj, '_FileStorage__file_path', "file")
+        self.assertEqual(obj._FileStorage__file_path, "file")
 
     def test_object(self):
         objec = FileStorage()
-        objec.__objects = {}
-        self.assertEqual(objec.__objects, {})
+        setattr(objec, '_FileStorage__objects', {})
+        self.assertEqual(objec._FileStorage__objects, {})
 
 if __name__ == '__main__':
     unittest.main()
