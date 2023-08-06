@@ -7,10 +7,7 @@ class attributes"""
 
 class User(BaseModel):
     """User class"""
-
-    def __init__(self):
-        """This is a constructor"""
-        self.email = str()
-        self.password = str()
-        self.first_name = str()
-        self.last_name = str()
+    email = str()
+    password = str()
+    first_name = str()
+    last_name = str()
