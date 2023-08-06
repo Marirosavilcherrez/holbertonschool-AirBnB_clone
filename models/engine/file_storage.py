@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 import os
+from models.user import User
 
 """This is a class FileStorage that serializes instance
 to a JSON file and desealizes in JSON format"""
@@ -22,8 +23,9 @@ class FileStorage:
         dic_store = {}
         for key, value in FileStorage.__objects.items():
             dic_store[key] = value.to_dict()
-        with open(FileStorage.__file_path, mode="w", encoding="UTF-8") as document:
-                document.write(json.dumps(dic_store))
+        with open(FileStorage.__file_path, mode="w", encoding="UTF-8")\
+                as document:
+            document.write(json.dumps(dic_store))
 
     def reload(self):
         """Deserealizes"""
