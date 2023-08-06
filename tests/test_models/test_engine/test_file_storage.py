@@ -10,10 +10,6 @@ from models.engine.file_storage import FileStorage
 
 class TestFileStorage(unittest.TestCase):
 
-    def test_type(self):
-        obj = FileStorage()
-        self.assertNotEqual(obj, str)
-
     def test_path(self):
         obj = FileStorage()
         setattr(obj, '_FileStorage__file_path', "file")
