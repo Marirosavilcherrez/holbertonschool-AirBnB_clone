@@ -8,12 +8,12 @@ import json
 
 class TestFileStorage(unittest.TestCase):
 
-    def test_path(self):
+    def test_file_path(self):
         obj = FileStorage()
         setattr(obj, '_FileStorage__file_path', "file")
         self.assertEqual(obj._FileStorage__file_path, "file")
 
-    def test_object(self):
+    def test_file_objects(self):
         objec = FileStorage()
         setattr(objec, '_FileStorage__objects', {})
         self.assertEqual(objec._FileStorage__objects, {})
