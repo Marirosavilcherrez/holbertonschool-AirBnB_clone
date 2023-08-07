@@ -28,7 +28,7 @@ and implement future improvements
 In this program you will find the folowing files and directories:
 
 * models 
-  * __init__.py 
+  * \__init__\.py 
   * engine 
     * file_storage.py 
   * base_model.py 
@@ -39,7 +39,7 @@ In this program you will find the folowing files and directories:
   * review.py 
   * state.py 
 * tests 
-  * __init__.py 
+  * \__init__\.py 
   * test_models 
     * test_base_model.py 
     * test_amenity.py 
