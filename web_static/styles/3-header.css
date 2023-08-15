@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: white; 
+    height: 70px; 
+    width: 100%;
+    border-bottom: 1px #CCCCCC;
+    margin: auto;
+}
+
+.header .header-logo {
+    display: flex;
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+    width: 150px;
+    height: 50px;
+}
+
+main {
+    flex: 1
+}
