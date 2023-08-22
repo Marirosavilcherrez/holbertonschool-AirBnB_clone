@@ -1,0 +1,103 @@
+.places {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 50px;
+    height: auto;
+}
+
+.places h1 {
+    display: flex;
+    font-size: 30px;
+    margin-left: 15px;
+    text-align: left;
+    color: black;
+}
+
+.places article {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.places article .box-1 {
+    border: #FF5A5F solid 1px;
+    border-radius: 4px;
+    text-align: center;
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.box-title-price {
+    display: flex;
+    height: 70px;
+    justify-content: center; 
+}
+
+.box-title-price h2 {
+    font-size: 25px;
+}
+
+.price_by_night {
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    color: #FF5A5F;
+    border: #FF5A5F solid 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px; 
+    top: 10px;
+}
+
+.information .max_guest {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+}
+
+.max_guest {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.guest-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 100%;
+}
+
+.guest-icons object {
+    width: 50px;
+    margin-top: 10px;
+}
+
+.guest-icons p {
+    font-size: 12px;
+}
+
+.user {
+    text-align: justify;
+    height: 30px;
+}
+
+.description {
+    margin-top: 1px;
+    text-align: justify;
+}
